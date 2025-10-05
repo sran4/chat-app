@@ -4,6 +4,7 @@ import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
 import { API_ENDPOINTS } from "../../config/api";
 import { extractTime } from "../../utils/extractTime";
+import { getAuthHeaders } from "../../utils/getAuthHeaders.js";
 
 const RecentMessages = () => {
   const { authUser } = useAuthContext();
@@ -16,6 +17,7 @@ const RecentMessages = () => {
     const fetchRecentMessages = async () => {
       try {
         const response = await fetch(API_ENDPOINTS.MESSAGES.RECENT, {
+          headers: getAuthHeaders(),
           credentials: "include",
         });
 
