@@ -1,4 +1,5 @@
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 import generateTokenAndSetCookie from "../utils/generateToken.js";
 
@@ -63,6 +64,11 @@ export const login = async (req, res) => {
 			return res.status(400).json({ error: "Invalid username or password" });
 		}
 
+		const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+			expiresIn: "15d",
+		});
+
+		// Set cookie for local development
 		generateTokenAndSetCookie(user._id, res);
 
 		res.status(200).json({
@@ -70,6 +76,7 @@ export const login = async (req, res) => {
 			fullName: user.fullName,
 			username: user.username,
 			profilePic: user.profilePic,
+			token: token, // Include token in response for frontend
 		});
 	} catch (error) {
 		console.log("Error in login controller", error.message);

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import { API_ENDPOINTS } from "../config/api";
+import { getAuthHeaders } from "../utils/getAuthHeaders.js";
 
 const useGetUnreadCounts = () => {
   const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ const useGetUnreadCounts = () => {
       console.log("🔄 Fetching unread counts from API...");
       const res = await fetch(API_ENDPOINTS.MESSAGES.UNREAD_COUNTS, {
         method: "GET",
+        headers: getAuthHeaders(),
         credentials: "include",
       });
 

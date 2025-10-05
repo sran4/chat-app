@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { API_ENDPOINTS } from "../config/api.js";
+import { getAuthHeaders } from "../utils/getAuthHeaders.js";
 
 const useGetConversations = () => {
   const [loading, setLoading] = useState(false);
@@ -11,6 +12,7 @@ const useGetConversations = () => {
       setLoading(true);
       try {
         const res = await fetch(API_ENDPOINTS.USERS, {
+          headers: getAuthHeaders(),
           credentials: "include",
         });
         const data = await res.json();
