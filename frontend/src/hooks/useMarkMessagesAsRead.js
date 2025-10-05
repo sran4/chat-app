@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import { API_ENDPOINTS } from "../config/api";
+import { getAuthHeaders } from "../utils/getAuthHeaders.js";
 
 const useMarkMessagesAsRead = () => {
   const [loading, setLoading] = useState(false);
@@ -13,6 +14,7 @@ const useMarkMessagesAsRead = () => {
     try {
       const res = await fetch(API_ENDPOINTS.MESSAGES.MARK_READ(userToChatId), {
         method: "PUT",
+        headers: getAuthHeaders(),
         credentials: "include",
       });
 

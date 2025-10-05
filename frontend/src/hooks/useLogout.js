@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
 import { API_ENDPOINTS } from "../config/api.js";
+import { getAuthHeaders } from "../utils/getAuthHeaders.js";
 
 const useLogout = () => {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ const useLogout = () => {
     try {
       const res = await fetch(API_ENDPOINTS.AUTH.LOGOUT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getAuthHeaders(),
         credentials: "include",
       });
       const data = await res.json();
@@ -21,6 +22,7 @@ const useLogout = () => {
       }
 
       localStorage.removeItem("chat-user");
+      localStorage.removeItem("chat-token");
       setAuthUser(null);
     } catch (error) {
       toast.error(error.message);

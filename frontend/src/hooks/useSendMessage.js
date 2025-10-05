@@ -2,6 +2,7 @@ import { useState } from "react";
 import useConversation from "../zustand/useConversation";
 import toast from "react-hot-toast";
 import { API_ENDPOINTS } from "../config/api.js";
+import { getAuthHeaders } from "../utils/getAuthHeaders.js";
 
 const useSendMessage = () => {
   const [loading, setLoading] = useState(false);
@@ -14,9 +15,7 @@ const useSendMessage = () => {
         API_ENDPOINTS.MESSAGES.SEND(selectedConversation._id),
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: getAuthHeaders(),
           credentials: "include",
           body: JSON.stringify({ message }),
         }
