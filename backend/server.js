@@ -18,7 +18,9 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     origin: [
-      "http://localhost:3000", // Development
+      "http://localhost:3000", // Development IPv4
+      "http://127.0.0.1:3000", // Development IPv4 alternative
+      "http://[::1]:3000", // Development IPv6
       "https://chat-app.vercel.app", // Production Vercel
       "https://chat-app-git-main.vercel.app", // Vercel preview
     ],
