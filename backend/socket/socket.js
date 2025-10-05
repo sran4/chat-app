@@ -11,6 +11,7 @@ const io = new Server(server, {
       "http://localhost:3000", // Development
       "https://chat-app.vercel.app", // Production Vercel
       "https://chat-app-git-main.vercel.app", // Vercel preview
+      "https://chat-app-six-livid-43.vercel.app", // Your deployed Vercel URL
     ],
     methods: ["GET", "POST"],
     credentials: true,
