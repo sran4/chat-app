@@ -10,9 +10,11 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
 ## 🖼️ Screenshots
 
 ### Home Page
+
 ![Home Page](./frontend/public/images/home.png)
 
 ### Individual User Chat
+
 ![Individual User Chat](./frontend/public/images/indivicual%20user.png)
 
 ## ✨ Features
@@ -33,6 +35,7 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** - Modern React with hooks
 - **Vite** - Fast build tool and dev server
 - **TailwindCSS** - Utility-first CSS framework
@@ -43,6 +46,7 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
 - **React Hot Toast** - Beautiful notifications
 
 ### Backend
+
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
 - **Socket.io** - Real-time bidirectional communication
@@ -55,6 +59,7 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - MongoDB (local or Atlas)
 - Git
@@ -62,25 +67,28 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/sran4/chat-app.git
    cd chat-app
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Install backend dependencies
    cd backend
    npm install
-   
+
    # Install frontend dependencies
    cd ../frontend
    npm install
    ```
 
 3. **Environment Setup**
-   
+
    Create a `.env` file in the `backend` directory:
+
    ```env
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/chat-app
@@ -89,11 +97,12 @@ A modern, full-stack real-time chat application built with the MERN stack, featu
    ```
 
 4. **Start the application**
+
    ```bash
    # Start backend server
    cd backend
    npm run dev
-   
+
    # Start frontend (in a new terminal)
    cd frontend
    npm run dev
@@ -130,14 +139,17 @@ mern-chat-app/
 ## 🔧 API Endpoints
 
 ### Authentication
+
 - `POST /api/auth/signup` - User registration
 - `POST /api/auth/login` - User login
 - `POST /api/auth/logout` - User logout
 
 ### Users
+
 - `GET /api/users` - Get all users for sidebar
 
 ### Messages
+
 - `GET /api/messages/:id` - Get messages for a conversation
 - `POST /api/messages/send/:id` - Send a message
 - `PUT /api/messages/read/:id` - Mark messages as read
@@ -147,11 +159,13 @@ mern-chat-app/
 ## 🌐 Deployment
 
 This application is deployed using:
+
 - **Frontend**: Vercel (https://vercel.com)
 - **Backend**: Render (https://render.com)
 - **Database**: MongoDB Atlas (https://cloud.mongodb.com)
 
 ### Deployment Features
+
 - ✅ Cross-domain authentication with Authorization headers
 - ✅ CORS configuration for production
 - ✅ Environment variables for secure configuration
@@ -172,6 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Satwant Sran**
+
 - GitHub: [@sran4](https://github.com/sran4)
 - LinkedIn: [Your LinkedIn Profile]
 
