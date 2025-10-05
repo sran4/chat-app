@@ -23,6 +23,7 @@ app.use(
       "http://[::1]:3000", // Development IPv6
       "https://chat-app.vercel.app", // Production Vercel
       "https://chat-app-git-main.vercel.app", // Vercel preview
+      "https://chat-app-six-livid-43.vercel.app", // Your deployed Vercel URL
     ],
     credentials: true,
   })
